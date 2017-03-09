@@ -1,12 +1,28 @@
 var React = require('react');
 var Clock = require('Clock');
+var CountdownForm = require('CountdownForm');
 
  var Countdown =React.createClass({
+getInitialState: function () {
+  return{ count: 0 }
+},
+   handelSetCountdwon:function (seconds) {
+     this.setState({
+     count:seconds
+   })
+   },
+
+
 render: function () {
+  var {count} = this.state
   return (
 <div>
+  
+  <Clock totalSeconds={count}/>
+  <CountdownForm num={this.handelSetCountdwon}/>
 
-  <Clock totalSeconds={61}/>
+
+
 </div>
 
 )
@@ -15,4 +31,4 @@ render: function () {
 
 
 
-module.exports=Countdown;
+module.exports = Countdown;
