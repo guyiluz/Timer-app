@@ -11,9 +11,9 @@ it('should exist', ()=>{
 expect(CountdownForm).toExist();
 
 })
-it('should call on num if valid seconds entered',()=>{
+it('should call on onSetCountdown if valid seconds entered',()=>{
 var spy = expect.createSpy();
-var countdownForm= TestUtils.renderIntoDocument(<CountdownForm num={spy}/>);
+var countdownForm= TestUtils.renderIntoDocument(<CountdownForm onSetCountdown={spy}/>);
 var $el = $(ReactDOM.findDOMNode(countdownForm));
 
 
@@ -25,9 +25,9 @@ TestUtils.Simulate.submit($el.find('form')[0]);
 })
 
 
-it('shouldnt call on num if invalid seconds entered',()=>{
+it('shouldnt call on onSetCountdown if invalid seconds entered',()=>{
 var spy = expect.createSpy();
-var countdownForm= TestUtils.renderIntoDocument(<CountdownForm num={spy}/>);
+var countdownForm= TestUtils.renderIntoDocument(<CountdownForm onSetCountdown={spy}/>);
 var $el = $(ReactDOM.findDOMNode(countdownForm));
 
 
