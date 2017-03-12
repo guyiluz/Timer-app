@@ -1,7 +1,12 @@
 @import "base/variables";
+
+// foundation
+@import "base/foundation-settings";
+@import "foundation";
+@include foundation-everything;
+
+// Components
 @import "components/navigation";
-@import "components/Clock";
-@import "components/Button";
-@import "components/Controls";
+@import "components/clock";
+@import "components/controls";
 @import "components/page-title";
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
